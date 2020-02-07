@@ -29,7 +29,8 @@
 
 push到遠端數據庫
 
-![](https://i.imgur.com/dcw2IBC.png)
+![](https://i.imgur.com/UFtEQul.png)
+
 
 ![](https://i.imgur.com/zBqRbny.png)
 1. 當我們建立數據庫後，立即新增一個檔案時，用 ```git status``` 查詢，會發現它是在 ```Untracked``` 狀態。
