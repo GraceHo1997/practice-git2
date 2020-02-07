@@ -1,0 +1,393 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+	<meta name="generator" content="Jekyll v3.8.5">
+
+	<title>新增預約 ｜ 美容服務整合平台</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="statics/css/bootstrap.min.css" rel="stylesheet">
+	<link href="statics/css/font-awesome.min.css" rel="stylesheet">
+	<link href="statics/icon/favicon.ico" type="image/x-icon" rel="icon">
+	<link href="statics/icon/favicon.ico" type="image/x-icon" rel="shortcut icon">
+
+
+	<style>
+		html,
+		body {
+			font-family: 微軟正黑體;
+		}
+		
+		.menu {
+	  font-size: 16px;
+	  line-height: 1;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	}
+	
+	.menu__list {
+	  font-size: 16px;
+	  position: relative;
+	  display: -webkit-flex;
+	  display: flex;
+	  -webkit-flex-wrap: wrap;
+	  flex-wrap: wrap;
+	  margin: 0;
+	  padding: 0;
+	  list-style: none;
+	}
+	
+	.menu__item {
+	  font-size: 16px;
+	  display: block;
+	  margin: 1em 0;
+	}
+	
+	.menu__login {
+	  font-size: 16px;
+	  display: block;
+	  margin: 1em 0;
+	  text-align:right;
+	}
+	
+	.menu__link {
+	  font-size: 1.05em;
+	  font-weight: bold;
+	  display: block;
+	  padding: 1em;
+	  cursor: pointer;
+	  -webkit-user-select: none;
+	  -moz-user-select: none;
+	  -ms-user-select: none;
+	  user-select: none;
+	  -webkit-touch-callout: none;
+	  -khtml-user-select: none;
+	  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	}
+	.menu__link:hover,
+	.menu__link:focus {
+		outline: none;
+	}
+	.menu--prospero .menu__link {
+		position: relative;
+		display: block;
+		margin: 0 1.5em;
+		padding: 0.75em 0;
+		text-align: center;
+		color: #b5b5b5;
+		transition: color 0.3s;
+	}
+	.menu--prospero .menu__link:hover,
+	.menu--prospero .menu__link:focus {
+		color: #929292;
+	}
+	
+	.menu--prospero .menu__item--current .menu__link {
+		color: #d94f5c;
+	}
+	.menu--prospero .menu__link::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 4px;
+		background: #d94f5c;
+		transform: scale3d(0, 1, 1);
+		transition: transform 0.1s;
+	}
+	.menu--prospero .menu__item--current .menu__link::before {
+		transform: scale3d(1, 1, 1);
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-duration: 0.3s;
+	}
+
+		.bd-placeholder-img {
+			font-size: 1.125rem;
+			text-anchor: middle;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+
+		@media (min-width: 768px) {
+			.bd-placeholder-img-lg {
+				font-size: 3.5rem;
+			}
+		}
+		h1 {
+	  font-size: 34px;
+	  color: #39393e;
+	  font-weight: bold;
+	  letter-spacing: 2px;
+	}
+	
+	h2 {
+	  font-size: 20px;
+	  color: #929295;
+	  font-weight: 600;
+	  letter-spacing: 1px;
+	}
+	</style>
+	<!-- Custom styles for this template -->
+	<link href="statics/css/product.css" rel="stylesheet">
+	<link href="statics/css/jquery-confirm.css" rel="stylesheet">
+
+	<script src="statics/js/jquery-3.4.1.min.js"></script>
+	<script src="statics/js/jquery-confirm.js"></script>
+</head>
+
+<body>
+	<section class="section section--menu" id="Prospero">
+	  <nav class="menu menu--prospero">
+	
+	    <ul class="menu__list">
+	      <li class="menu__item">
+	        <a class="menu__link" href="home.html" style="text-decoration:none;">首頁</a>
+	      </li>
+	      <li class="menu__item menu__item--current">
+	        <a class="menu__link" href="service.html" style="text-decoration:none;">選擇服務</a>
+	      </li>
+	      <li class="menu__item">
+	        <a class="menu__link" href="reserve.html" style="text-decoration:none;">檢視預約</a>
+	      </li>
+	      <li class="menu__item">
+	        <a class="menu__link" href="rating.html" style="text-decoration:none;">檢視評價</a>
+	      </li>
+	      <li class="menu__item">
+	        <a class="menu__link" href="favorite.html" style="text-decoration:none;">我的最愛</a>
+	      </li>
+	      <li class="menu__item">
+	        <a class="menu__link" href="index.html" style="text-decoration:none;">登出</a>
+	      </li>
+	    </ul>
+	    
+	  </nav>
+	</section>    
+
+	<center>
+		<br><h1>新增預約</h1><br>
+		<h2>以下是您所選的服務，請輸入相關資訊後即可新增預約！</h2>
+	</center>
+
+	<div class="container">
+		<div class="py-5" style="margin-left:295px;">
+			<div class='row'>
+
+				<div class="col-md-8 order-md-1">
+					<p style="font-size: 24px;font-weight:600;color:#d94f5c">個人資訊</p>
+					<hr class="mb-4">
+					<div class="row">
+						<div class="col-md-6 mb-4">
+							<label for="Name" style="font-weight:600;color:#39393e;">名字</label>
+							<input type="text" class="form-control" id="name" maxlength="10" placeholder="" value=""
+								required>
+						</div>
+					</div>
+
+					<div class="mb-3">
+						<label for="email" style="font-weight:600;color:#39393e;">Email</label>
+						<input type="email" class="form-control" maxlength="50" id="email" placeholder="you@example.com"
+							required>
+					</div>
+
+					<div class="mb-3">
+						<label for="phonenum" style="font-weight:600;color:#39393e;">手機號碼:</label><br />
+						<input id="phone" type="tel" class="form-control" maxlength="12" placeholder="09xx-xxx-xxx"
+							required>
+					</div>
+					<p style="font-weight:600;color:#39393e;">選擇預約時間</p>
+					<input type="datetime-local" name="rdaytime" class="form-control" id="time" required>
+					<br>
+					<label for="text" style="font-weight:600;color:#39393e;">備註<span class="text-muted" id="remark">（額外需求）</span></label><br />
+					<textarea id="note" style="width:535px;height:100px"></textarea>
+					<br><br>
+					<p style="font-size: 24px;font-weight:600;color:#d94f5c">商品資訊</p>
+					<hr class="mb-4">
+					<div class="row">
+						<div class="table-responsive">
+							<table id="adres_table" class="table table-striped table-sm">
+								<thead>
+									<tr>
+										<th class="text-center" style="width: 10%">商品編號</th>
+										<th class="text-center" style="width: 30%">品名</th>
+										<th class="text-center" style="width: 15%">價格</th>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+						</div>
+					</div><br>
+					<button id="check" class="btn btn-primary btn-lg btn-block" type="button" style="letter-spacing:1px;font-weight:600;background-color:#f16c5d;border:none;outline:none;">確認</button>
+					<button id="cancel" class="btn btn-primary btn-lg btn-block"
+						onclick="javascript:location.href='service.html'" type="button" style="outline:none;letter-spacing:1px;font-weight:600;border:none;background-color:#eeeeef;color:#39393e;">取消</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<script>
+	$(document).ready(function() {
+    	$(".menu__item").click('.menu__link',function(e){
+    	    $(".menu__item").removeClass("menu__item--current");
+    	    $(this).addClass("menu__item--current");
+    	  })  
+    });
+	
+		var [client_adres_obj] = getAdresDataFromClient();
+
+		getAdresService();
+
+		$("#check").click(function () {
+			var data = {
+				"date": $("#time").val(),
+				"note": $("#note").val(),
+				"complete_status": "no",
+				"name": $("#name").val(),
+				"email": $("#email").val(),
+				"phone": $("#phone").val(),
+				"rating": "no",
+				"item": client_adres_obj
+			}
+
+			// 驗證輸入的資料
+			pass_vaild = vaildData(data);
+			if (pass_vaild) {
+				var data_string = JSON.stringify(data);
+
+				// 發出POST的AJAX請求
+				$.ajax({
+					type: "POST",
+					url: "api/reserve.do",
+					data: data_string,
+					crossDomain: true,
+					cache: false,
+					dataType: 'json',
+					timeout: 5000,
+					success: function (response) {
+						if (response.status == 200) {
+							$.confirm({
+								theme: 'modern',
+								icon: 'fa fa-check-circle-o',
+								type: 'green',
+								animation: 'scale',
+								title: '系統提醒',
+								content: "已完成新增預約！",
+								buttons: {
+									確定: {
+										text: '確定',
+										btnClass: 'btn-blue',
+										action: function () {
+											cleanAllData();
+											document.location.href = "service.html";
+										}
+									}
+								}
+							});
+						}
+					},
+					error: function () {
+						alert("無法連線到伺服器！");
+					}
+				});
+			}
+		});
+
+		//取消>清除暫存的服務
+		$("#cancel").click(function () {
+			console.log("[@Action]清空");
+			cleanAllData();
+		});
+		
+		//上一頁>清除暫存的服務
+		$(window).bind('beforeunload',function(){
+			cleanAllData();
+		});
+		
+		//驗證輸入資料
+		function vaildData(data) {
+			var email_rule = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
+			var phone_rule = /^09\d{2}-\d{3}-\d{3}$/;
+
+			if (data["name"] == "" || data['phone'] == "" || data['email'] == "") alert("必填寫欄位不得有空值！");
+			else if (data['email'] != "" && !email_rule.test(data['email'])) alert("Email格式不符！");
+			else if (!phone_rule.test(data['phone'])) alert("手機格式不符（應為09XX-XXX-XXX）！");
+			else return true;
+
+			return false;
+		}
+
+		//清除table的服務
+		function cleanAllData() {
+			client_adres_obj = [];
+			updateAdresDataToClent();
+			$("#adres_table > tbody").empty();
+		}
+		
+		//取得欲預約之服務
+		function getAdresService() {
+			$.ajax({
+				type: "GET",
+				url: "api/service.do",
+				crossDomain: true,
+				cache: false,
+				data: "id_list=" + client_adres_obj.toString(),
+				dataType: 'json',
+				timeout: 5000,
+				success: function (response) {
+					if (response.status == 200) {
+						updateAdresTable(response.response.data);
+					}
+				},
+				error: function () {
+					alert("無法連線到伺服器！");
+				}
+			});
+		}
+
+		//添加欲預約服務到table
+		function updateAdresTable(data) {
+			table_html = '';
+			$("#adres_table > tbody").empty();
+			$.each(data, function (index, value) {
+				table_html += '<tr id="row_' + value.id + '">';
+				table_html += '<td class="align-middle text-center">' + value.id + '</td>';
+				table_html += '<td class="align-middle text-center">' + value.name + '</td>';
+				table_html += '<td class="align-middle text-center"><span id="price_' + value.id + '">' + value.price + '</td>';
+				table_html += '</tr>';
+			})
+
+			$("#adres_table > tbody").append(table_html);
+		}
+
+		function getAdresDataFromClient() {
+			let adres = JSON.parse(localStorage.getItem("client_adres_obj"));
+			adres = !adres ? new Array() : adres;
+			return [adres];
+		}
+		//更新表單資料
+		function updateAdresDataToClent() {
+			localStorage.setItem("client_adres_obj", JSON.stringify(client_adres_obj));
+		}
+
+	</script>
+
+	<footer class="text-muted">
+		<div class="container">
+			<p class="float-right">
+				<a href="#">Back to top</a>
+			</p>
+		</div>
+	</footer>
+</body>
+
+</html>

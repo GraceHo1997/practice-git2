@@ -1,0 +1,355 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Jekyll v3.8.5">
+
+  <title>選擇服務 ｜ 美容服務整合平台</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="statics/css/bootstrap.min.css" rel="stylesheet">
+  <link href="statics/icon/favicon.ico" type="image/x-icon" rel="icon">
+  <link href="statics/icon/favicon.ico" type="image/x-icon" rel="shortcut icon">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<style> 
+	html,body{
+	  		font-family: 微軟正黑體;
+	  	}
+	  	
+	.menu {
+		
+	  font-size: 16px;
+	  line-height: 1;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	}
+	
+	.menu__list {
+	  font-size: 16px;
+	  position: relative;
+	  display: -webkit-flex;
+	  display: flex;
+	  -webkit-flex-wrap: wrap;
+	  flex-wrap: wrap;
+	  margin: 0;
+	  padding: 0;
+	  list-style: none;
+	}
+	
+	.menu__item {
+	  font-size: 16px;
+	  display: block;
+	  margin: 1em 0;
+	}
+	
+	.menu__login {
+	  font-size: 16px;
+	  display: block;
+	  margin: 1em 0;
+	  text-align:right;
+	}
+	
+	.menu__link {
+	  font-size: 1.05em;
+	  font-weight: bold;
+	  display: block;
+	  padding: 1em;
+	  cursor: pointer;
+	  -webkit-user-select: none;
+	  -moz-user-select: none;
+	  -ms-user-select: none;
+	  user-select: none;
+	  -webkit-touch-callout: none;
+	  -khtml-user-select: none;
+	  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	}
+	.menu__link:hover,
+	.menu__link:focus {
+		outline: none;
+	}
+	.menu--prospero .menu__link {
+		position: relative;
+		display: block;
+		margin: 0 1.5em;
+		padding: 0.75em 0;
+		text-align: center;
+		color: #b5b5b5;
+		transition: color 0.3s;
+	}
+	.menu--prospero .menu__link:hover,
+	.menu--prospero .menu__link:focus {
+		color: #929292;
+	}
+	
+	.menu--prospero .menu__item--current .menu__link {
+		color: #d94f5c;
+	}
+	.menu--prospero .menu__link::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 4px;
+		background: #d94f5c;
+		transform: scale3d(0, 1, 1);
+		transition: transform 0.1s;
+	}
+	.menu--prospero .menu__item--current .menu__link::before {
+		transform: scale3d(1, 1, 1);
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-duration: 0.3s;
+	}
+  	
+	input[type=text] {
+	  width: 130px;
+	  box-sizing: border-box;
+	  border: 2px solid #ccc;
+	  border-radius: 4px;
+	  font-size: 16px;
+	  background-color: white;
+	  background-image: url('searchicon.png');
+	  background-position: 10px 10px; 
+	  background-repeat: no-repeat;
+	  padding: 12px 20px 12px 40px;
+	  -webkit-transition: width 0.4s ease-in-out;
+	  transition: width 0.4s ease-in-out;
+	}
+	
+	input[type=text]:focus {
+	  width: 100%;
+	}
+	
+	h1 {
+	  font-size: 34px;
+	  color: #39393e;
+	  font-weight: bold;
+	  letter-spacing: 2px;
+	}
+	
+	h2 {
+	  font-size: 20px;
+	  color: #929295;
+	  font-weight: 600;
+	  letter-spacing: 1px;
+	}
+</style>
+  <!-- Custom styles for this template -->
+  <link href="statics/css/product.css" rel="stylesheet">
+
+  <script src="statics/js/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+
+<section class="section section--menu" id="Prospero">
+	  <nav class="menu menu--prospero">
+	    <ul class="menu__list">
+	      <li class="menu__item">
+	        <a class="menu__link" href="home.html" style="text-decoration:none;">首頁</a>
+	      </li>
+	      <li class="menu__item menu__item--current">
+	        <a class="menu__link" href="service.html" style="text-decoration:none;">選擇服務</a>
+	      </li>
+	      <li class="menu__item">
+	        <a class="menu__link" href="reserve.html" style="text-decoration:none;">檢視預約</a>
+	      </li>
+	      <li class="menu__item">
+	        <a class="menu__link" href="rating.html" style="text-decoration:none;">檢視評價</a>
+	      </li>
+	      <li class="menu__item">
+	        <a class="menu__link" href="favorite.html" style="text-decoration:none;">我的最愛</a>
+	      </li>
+	      <li class="menu__item">
+	        <a class="menu__link" href="index.html" style="text-decoration:none;">登出</a>
+	      </li>
+	    </ul>
+	    
+	  </nav>
+	</section>    
+	
+	<center>
+    <br><h1>服務列表</h1><br>
+    <h2>我們服務內容包含美容、美髮、美甲</h2><br>
+	</center>
+
+
+    <div class="container">
+      <div id="service_panel" class="row">
+      </div>
+    </div>
+
+
+  <script>  
+  $(document).ready(function() {
+	//菜單
+  	$(".menu__item").click('.menu__link',function(e){
+  	    $(".menu__item").removeClass("menu__item--current");
+  	    $(this).addClass("menu__item--current");
+  	  })
+  	  
+  });
+  
+    var [client_adres_obj]  = getAdresDataFromClient();//cookie撈資料希望下次開機還有
+    var [client_fav_obj]  = getFavDataFromClient();
+    
+  //取得所有service
+    function getAllService() {
+      $.ajax({
+        type: "GET",
+        url: "api/service.do",
+        crossDomain: true,
+        cache: false,
+        dataType: 'json',
+        timeout: 5000,
+        success: function (response) {
+          if (response.status == 200) {
+        	var service_panel = '';
+        	
+        	$.each(response.response.data, function (){
+        		service_panel += addService(this);
+        	})
+        	
+        	$("#service_panel").append(service_panel);
+        	setButtonFunctionc(); 
+        	setButtonFunctionf();
+        	checkIfExistInAdres();
+          }
+        },
+        error: function () {
+          alert("無法連線到伺服器！");
+        }
+      });
+    }
+
+    getAllService();
+    
+  //添加service到table
+    function addService(data) {
+    	let inner_html = '';
+    	inner_html += '<div class="col-md-4">';
+   		inner_html += '<div class="card-header" style="color: #39393e">';
+   		inner_html += '<h4 style="color: #39393e; font-size:20px; font-weight:600; text-align:center;">' + data.name + '</h4>';
+ 		inner_html += '</div>';
+ 		inner_html += '<div class="card mb-4 shadow-sm">';
+ 		if(data.image != ""){
+ 			inner_html += '<img src="statics/img/service/' + data.image + '" width="100%">';
+ 		}
+ 		inner_html += '<div class="card-body">';
+		inner_html += '<h1 class="card-title pricing-card-title">$' + data.price + ' <small class="text-muted">/ NT</small></h1>';
+		inner_html += '<p style="font-size: 20px;color: #39393e;">' + data.describe + '</p>';
+		inner_html += '<div class="d-flex justify-content-between align-items-center">';
+		inner_html += '<div class="btn-group">';
+		inner_html += '<button id="add_adres_' + data.id + '" name="add_adres" type="button" style="outline:none;padding:5px;letter-spacing:1px;font-weight:600;width: 150px;background-color:#f16c5d;border:none;border-radius:4px;color:white;">新增預約</button>';
+		inner_html += '&nbsp&nbsp<button id="add_fav_' + data.id + '" name="add_fav" type="button" style="outline:none;padding:5px;letter-spacing:1px;font-weight:600;width: 150px;background-color:#eeeeef;border-radius:4px;color:#39393e;">加入我的最愛</button>';
+		inner_html += '</div></div></div></div></div>';
+    	
+		return inner_html;
+    }
+    
+    //按鈕點擊加入功能
+    function setButtonFunctionc() { 
+    	$('button[name="add_adres"]').click(function () {
+    		var action = (this.id).split('_')[0];
+    		var destination = (this.id).split('_')[1];
+    		var id = (this.id).split('_')[2];
+    		addServiceToAdres(id, 1);
+    		document.location.href = "addreservation.html";
+        });
+    }
+    function setButtonFunctionf() {
+    	$('button[name="add_fav"]').click(function () {
+    		var action = (this.id).split('_')[0];
+    		var destination = (this.id).split('_')[1];
+    		var id = (this.id).split('_')[2];
+    		addFavoriteToAdres(id, 1);
+        });
+    }
+    
+    //取得暫存data
+    function getAdresDataFromClient() {
+    	let adres = JSON.parse(localStorage.getItem("client_adres_obj"));
+    	adres = !adres ? new Array() : adres;
+    	return [adres];
+    }
+    function getFavDataFromClient() {
+    	let fav = JSON.parse(localStorage.getItem("client_fav_obj"));  
+    	fav = !fav ? new Array() : fav;
+    	return [fav];
+    }
+    
+    //新增服務
+    function addServiceToAdres(id) {
+    	
+    	if (!(client_adres_obj.includes(id))) {
+    		client_adres_obj.push(id);
+    		updateAdresDataToClent();
+    	}
+    	
+    }
+    function addFavoriteToAdres(id) {
+    	
+    	if (!(client_fav_obj.includes(id))) {
+    		client_fav_obj.push(id);
+    		updateFavDataToClent();
+    	}
+    	checkIfExistInAdres();
+    }
+    
+    //我的最愛>檢查是否已新增了
+    function checkIfExistInAdres() {
+    	$('button[name="add_fav"]').each(function (){
+    		var action = (this.id).split('_')[0];
+    		var destination = (this.id).split('_')[1];
+    		var id = (this.id).split('_')[2];
+    		if (client_fav_obj.includes(id)) {
+    			setButtonStatef(this.id, false);
+    		}
+    		else {
+    			setButtonStatef(this.id, true);
+    		}
+    		
+        });
+    }
+    
+    //若已新增>改變button成"已新增"
+    function setButtonStatef(id, action) {
+    	if (!action) {
+    	    $('#' + id).prop('disabled', true);
+    	    $('#' + id).addClass('disabled');
+    	    $('#' + id).html('已新增');
+    	}
+    	else {
+    		$('#' + id).prop('disabled', false);
+    	    $('#' + id).removeClass('disabled');
+    	    $('#' + id).html('加入我的最愛');
+    	}
+    }
+    
+    //更新服務到localStorage
+    function updateAdresDataToClent() {
+    	localStorage.setItem("client_adres_obj", JSON.stringify(client_adres_obj));
+    }    
+    function updateFavDataToClent() {
+    	localStorage.setItem("client_fav_obj", JSON.stringify(client_fav_obj));
+    }    
+    
+    </script>
+
+
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Back to top</a>
+      </p>
+    </div>
+  </footer>
+</body>
+
+</html>

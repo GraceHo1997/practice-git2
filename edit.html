@@ -1,0 +1,261 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>編輯會員資料 ｜ 美容服務整合平台</title>
+    <link href="statics/icon/favicon.ico" type="image/x-icon" rel="icon">
+    <link href="statics/icon/favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <link rel="stylesheet" type="text/css" href="statics/css/cake.generic.css">
+	<link href="statics/css/bootstrap.min.css" rel="stylesheet">
+	<link href="statics/css/font-awesome.min.css" rel="stylesheet">
+	<link href="statics/icon/favicon.ico" type="image/x-icon" rel="icon">
+	<link href="statics/icon/favicon.ico" type="image/x-icon" rel="shortcut icon">
+	
+	<style>
+	html,body{
+  		font-family: 微軟正黑體;
+  	}
+  	.menu {
+		
+	  font-size: 16px;
+	  line-height: 1;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	}
+	
+	.menu__list {
+	  font-size: 16px;
+	  position: relative;
+	  display: -webkit-flex;
+	  display: flex;
+	  -webkit-flex-wrap: wrap;
+	  flex-wrap: wrap;
+	  margin: 0;
+	  padding: 0;
+	  list-style: none;
+	}
+	
+	.menu__item {
+	  font-size: 16px;
+	  display: block;
+	  margin: 1em 0;
+	}
+	
+	.menu__login {
+	  font-size: 16px;
+	  display: block;
+	  margin: 1em 0;
+	  text-align:right;
+	}
+	
+	.menu__link {
+	  font-size: 1.05em;
+	  font-weight: bold;
+	  display: block;
+	  padding: 1em;
+	  cursor: pointer;
+	  -webkit-user-select: none;
+	  -moz-user-select: none;
+	  -ms-user-select: none;
+	  user-select: none;
+	  -webkit-touch-callout: none;
+	  -khtml-user-select: none;
+	  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	}
+	.menu__link:hover,
+	.menu__link:focus {
+		outline: none;
+	}
+	.menu--prospero .menu__link {
+		position: relative;
+		display: block;
+		margin: 0 1.5em;
+		padding: 0.75em 0;
+		text-align: center;
+		color: #b5b5b5;
+		transition: color 0.3s;
+	}
+	.menu--prospero .menu__link:hover,
+	.menu--prospero .menu__link:focus {
+		color: #929292;
+	}
+	
+	.menu--prospero .menu__item--current .menu__link {
+		color: #d94f5c;
+	}
+	.menu--prospero .menu__link::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 4px;
+		background: #d94f5c;
+		transform: scale3d(0, 1, 1);
+		transition: transform 0.1s;
+	}
+	.menu--prospero .menu__item--current .menu__link::before {
+		transform: scale3d(1, 1, 1);
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-duration: 0.3s;
+	}
+	h1 {
+	  font-size: 34px;
+	  color: #39393e;
+	  font-weight: bold;
+	  letter-spacing: 2px;
+	}
+	</style>
+    <script src="statics/js/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+        <div id="content">
+    <section class="section section--menu" id="Prospero">
+	  <nav class="menu menu--prospero">
+	
+	    <ul class="menu__list">
+	      <li class="menu__item menu__item--current">
+	        <a class="menu__link" href="member.html" style="text-decoration:none;">檢視會員</a>
+	      </li>
+	      <li class="menu__item">
+	        <a class="menu__link" href="manager_register.html" style="text-decoration:none;">新增管理員</a>
+	      </li>
+	      <li class="menu__item">
+	        <a class="menu__link" href="manager_rating.html" style="text-decoration:none;">檢視評價</a>
+	      </li>
+	      <li class="menu__item">
+	        <a class="menu__link" href="index.html" style="text-decoration:none;">登出</a>
+	      </li>
+	    </ul>
+	    
+	  </nav>
+	</section>  
+	<center>
+    <br><h1>更新會員資料</h1><br>
+
+            <form id="form" accept-charset="utf-8">
+                <div style="display:none;"><input type="hidden" name="_method" value="POST"></div>
+                <div class="input text required">
+                    <label for="member_name">姓名</label>&nbsp&nbsp
+                    <input name="name" maxlength="30" style="width:500px" type="text" id="member_name" required="required">
+                </div>
+                <div class="input email required">
+                    <label for="member_email">電郵</label>&nbsp&nbsp
+                    <input name="email" maxlength="50" style="width:500px" type="email" id="member_email" required="required" disabled>
+                </div>
+                <div class="input password required">
+                    <label for="member_password">密碼</label>&nbsp&nbsp
+                    <input name="password" type="password" style="width:500px" id="member_password" required="required">
+                </div>
+                <div class="input phone required">
+                    <label for="member_phone">電話</label>&nbsp&nbsp
+                    <input name="phone" type="phone" style="width:500px" id="member_phone" required="required">
+                </div>
+                <button" style="outline:none;padding:10px 20px;letter-spacing:1px;font-weight:600;background-color:#f16c5d;border:none;border-radius:4px;color:white;cursor:pointer;" id="submit">更新</button>
+            </form>
+			</center>
+            <script type="text/javascript">
+            $(document).ready(function() {
+            	$(".menu__item").click('.menu__link',function(e){
+            	    $(".menu__item").removeClass("menu__item--current");
+            	    $(this).addClass("menu__item--current");
+            	  })  
+            });
+            
+                // 取得網址參數
+                var url_string = window.location.href;
+                var url = new URL(url_string);
+                var id = url.searchParams.get("id");
+                var sql_num = 0;
+
+                function updateMember(id) {
+                    var name = $('#member_name').val();
+                    var email = $('#member_email').val();
+                    var password = $('#member_password').val();
+                    var phone = $('#member_phone').val();
+
+                    var password_rule = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+                    if(!password_rule.test(password)) {
+                        alert("密碼格式不符，長度至少8，且至少包含一個數字和英文字母！");
+                    }
+                    else {
+                        // 將資料組成JSON格式
+                        var data_object = {
+                            "id": id,
+                            "name": name,
+                            "email": email,
+                            "password": password,
+                            "phone": phone
+                        };
+
+                        // 將JSON格式轉換成字串
+                        var data_string = JSON.stringify(data_object);
+
+                        // 發出POST的PUT請求
+                        $.ajax({
+                                type: "PUT",
+                                url: "api/member.do",
+                                data: data_string,
+                                crossDomain: true,
+                                cache: false,
+                                dataType: 'json',
+                                timeout: 5000,
+                                success: function (response) {
+                                    $('#flashMessage').html(response.message);
+                                    $('#flashMessage').show();
+                                    if(response.status == 200){
+                                        getMember();
+                                        document.location.href = "member.html";
+                                    }
+                                },
+                                error: function () {
+                                    alert("無法連線到伺服器！");
+                                }
+                        });
+                    }
+                }
+
+
+                function getMember() {
+                    $.ajax({
+                        type: "GET",
+                        url: "api/member.do",
+                        crossDomain: true,
+                        data: "id=" + id,
+                        cache: false,
+                        dataType: 'json',
+                        timeout: 5000,
+                        success: function (response) {
+                            if(response.status == 200){
+                            	document.getElementById('member_name').value = response['response']['data'][0]['name'];
+                            	document.getElementById('member_email').value = response['response']['data'][0]['email'];
+                            	document.getElementById('member_password').value = response['response']['data'][0]['password'];
+                            	document.getElementById('member_phone').value = response['response']['data'][0]['phone'];
+                            }
+                            console.log(response);
+                        },
+                        error: function () {
+                            alert("無法連線到伺服器！");
+                        }
+                    });
+                }
+
+                $('#submit').click(function() {
+                    updateMember(id)
+                });
+                
+                $(document).ready(function() {
+                	// 發出GET的AJAX請求取得原本該會員的資料
+                 	$("#sql_log > tbody").empty();
+                    getMember();
+                });
+            </script>
+        </div>
+
+</body>
+
+</html>

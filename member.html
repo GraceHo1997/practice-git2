@@ -1,0 +1,244 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>檢視所有會員 ｜ 美容服務整合平台</title>
+    <link href="statics/icon/favicon.ico" type="image/x-icon" rel="icon">
+    <link href="statics/icon/favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <link rel="stylesheet" type="text/css" href="statics/css/cake.generic.css">
+	<link href="statics/css/bootstrap.min.css" rel="stylesheet">
+	<link href="statics/css/font-awesome.min.css" rel="stylesheet">
+	<link href="statics/icon/favicon.ico" type="image/x-icon" rel="icon">
+	<link href="statics/icon/favicon.ico" type="image/x-icon" rel="shortcut icon">
+
+	<style>
+	html,body{
+  		font-family: 微軟正黑體;
+  	}
+  	.menu {
+		
+	  font-size: 16px;
+	  line-height: 1;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	}
+	
+	.menu__list {
+	  font-size: 16px;
+	  position: relative;
+	  display: -webkit-flex;
+	  display: flex;
+	  -webkit-flex-wrap: wrap;
+	  flex-wrap: wrap;
+	  margin: 0;
+	  padding: 0;
+	  list-style: none;
+	}
+	
+	.menu__item {
+	  font-size: 16px;
+	  display: block;
+	  margin: 1em 0;
+	}
+	
+	.menu__login {
+	  font-size: 16px;
+	  display: block;
+	  margin: 1em 0;
+	  text-align:right;
+	}
+	
+	.menu__link {
+	  font-size: 1.05em;
+	  font-weight: bold;
+	  display: block;
+	  padding: 1em;
+	  cursor: pointer;
+	  -webkit-user-select: none;
+	  -moz-user-select: none;
+	  -ms-user-select: none;
+	  user-select: none;
+	  -webkit-touch-callout: none;
+	  -khtml-user-select: none;
+	  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	}
+	.menu__link:hover,
+	.menu__link:focus {
+		outline: none;
+	}
+	.menu--prospero .menu__link {
+		position: relative;
+		display: block;
+		margin: 0 1.5em;
+		padding: 0.75em 0;
+		text-align: center;
+		color: #b5b5b5;
+		transition: color 0.3s;
+	}
+	.menu--prospero .menu__link:hover,
+	.menu--prospero .menu__link:focus {
+		color: #929292;
+	}
+	
+	.menu--prospero .menu__item--current .menu__link {
+		color: #d94f5c;
+	}
+	.menu--prospero .menu__link::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 4px;
+		background: #d94f5c;
+		transform: scale3d(0, 1, 1);
+		transition: transform 0.1s;
+	}
+	.menu--prospero .menu__item--current .menu__link::before {
+		transform: scale3d(1, 1, 1);
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-duration: 0.3s;
+	}
+	h1 {
+	  font-size: 34px;
+	  color: #39393e;
+	  font-weight: bold;
+	  letter-spacing: 2px;
+	}
+	</style>
+    <script src="statics/js/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+        <div id="content">
+
+      <section class="section section--menu" id="Prospero">
+	  <nav class="menu menu--prospero">
+	
+	    <ul class="menu__list">
+	      <li class="menu__item menu__item--current">
+	        <a class="menu__link" href="member.html" style="text-decoration:none;">檢視會員</a>
+	      </li>
+	      <li class="menu__item">
+	        <a class="menu__link" href="manager_register.html" style="text-decoration:none;">新增管理員</a>
+	      </li>
+	      <li class="menu__item">
+	        <a class="menu__link" href="manager_rating.html" style="text-decoration:none;">檢視評價</a>
+	      </li>
+	      <li class="menu__item">
+	        <a class="menu__link" href="index.html" style="text-decoration:none;">登出</a>
+	      </li>
+	    </ul>
+	    
+	  </nav>
+	</section>    
+
+      <center>
+    <br><h1>會員清單</h1>
+	</center>
+
+            <table id="table">
+                <thead>
+                    <tr>
+                        <th>編號</th>
+                        <th>姓名</th>
+                        <th>電郵</th>
+                        <th>電話</th>
+                        <th>功能</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <script type="text/javascript">
+            $(document).ready(function() {
+            	$(".menu__item").click('.menu__link',function(e){
+            	    $(".menu__item").removeClass("menu__item--current");
+            	    $(this).addClass("menu__item--current");
+            	  })  
+            });
+            
+                // 全域變數紀錄SQL指令下的次數
+                var sql_num = 0;
+                function deleteMember(id) {
+                    var check = window.confirm("確認刪除會員？");
+                    if (check == true) {
+                        console.log("You pressed OK!");
+                        var request = {'id': id};
+                        var data_string = JSON.stringify(request);
+                        $.ajax({
+                            type: "DELETE",
+                            url: "api/member.do",
+                            crossDomain: true,
+                            data: data_string,
+                            cache: false,
+                            dataType: 'json',
+                            timeout: 5000,
+                            success: function (response) {
+                                if(response.status == 200){
+                                    $("#flashMessage").html("成功! 已經成功刪除會員...");
+                                    $("#flashMessage").show();
+                                    getAllMember(); //刪完後，再撈全部的
+                                }
+                                console.log(response);
+                            },
+                            error: function () {
+                                alert("無法連線到伺服器！");
+                            }
+                        });
+                    }
+                    else {
+                        console.log("You pressed Cancel!");
+                    }
+                }
+
+                function getAllMember() {
+                    // 發出POST的GET請求取得所有會員列表
+                    $.ajax({
+                            type: "GET",
+                            url: "api/member.do",
+                            crossDomain: true,
+                            cache: false,
+                            dataType: 'json',
+                            timeout: 5000,
+                            success: function (response) {
+                                if(response.status == 200){
+                                    updateTable(response.response.data);
+                                }
+                                console.log(response);
+                            },
+                            error: function () {
+                                alert("無法連線到伺服器！");
+                            }
+                    });
+                }
+                
+                // 更新會員列表表格
+                function updateTable(data) {
+                    $("#table > tbody").empty();
+                    var table_html = '';
+                    $.each(data, function(index, value) {
+                        table_html += '<tr><td scope="row">' + value['id'] + '</td>';
+                        table_html += '<td>' + value['name'] + '</td>';
+                        table_html += '<td>' + value['email'] + '</td>';
+                        table_html += '<td>' + value['phone'] + '</td>';
+                        table_html += '<td>' + '<a href="edit.html?id=' + value['id'] + '">編輯</a> | '; //因為編輯的會員不同 所以網址不同
+                        table_html += '<a href="javascript: deleteMember(' + value['id'] + ');">刪除</a></td></tr>';
+                    })
+
+                    $("#table > tbody").append(table_html);
+                }
+                
+                $(document).ready(function() {
+                    getAllMember();
+                });
+            </script>
+
+    </div>
+
+</body>
+
+</html>

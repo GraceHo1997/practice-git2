@@ -1,0 +1,352 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Jekyll v3.8.5">
+
+  <title>檢視評價 ｜ 美容服務整合平台</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="statics/css/bootstrap.min.css" rel="stylesheet">
+  <link href="statics/css/font-awesome.min.css" rel="stylesheet">
+  <link href="statics/icon/favicon.ico" type="image/x-icon" rel="icon">
+  <link href="statics/icon/favicon.ico" type="image/x-icon" rel="shortcut icon">
+
+
+  <style>
+  	html,body {
+      font-family: "Oswald", 微軟正黑體;  
+	}
+	.menu {
+	  font-size: 16px;
+	  line-height: 1;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	}
+	
+	.menu__list {
+	  font-size: 16px;
+	  position: relative;
+	  display: -webkit-flex;
+	  display: flex;
+	  -webkit-flex-wrap: wrap;
+	  flex-wrap: wrap;
+	  margin: 0;
+	  padding: 0;
+	  list-style: none;
+	}
+	
+	.menu__item {
+	  font-size: 16px;
+	  display: block;
+	  margin: 1em 0;
+	}
+	
+	.menu__login {
+	  font-size: 16px;
+	  display: block;
+	  margin: 1em 0;
+	  text-align:right;
+	}
+	
+	.menu__link {
+	  font-size: 1.05em;
+	  font-weight: bold;
+	  display: block;
+	  padding: 1em;
+	  cursor: pointer;
+	  -webkit-user-select: none;
+	  -moz-user-select: none;
+	  -ms-user-select: none;
+	  user-select: none;
+	  -webkit-touch-callout: none;
+	  -khtml-user-select: none;
+	  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	}
+	.menu__link:hover,
+	.menu__link:focus {
+		outline: none;
+	}
+	.menu--prospero .menu__link {
+		position: relative;
+		display: block;
+		margin: 0 1.5em;
+		padding: 0.75em 0;
+		text-align: center;
+		color: #b5b5b5;
+		transition: color 0.3s;
+	}
+	.menu--prospero .menu__link:hover,
+	.menu--prospero .menu__link:focus {
+		color: #929292;
+	}
+	
+	.menu--prospero .menu__item--current .menu__link {
+		color: #d94f5c;
+	}
+	.menu--prospero .menu__link::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 4px;
+		background: #d94f5c;
+		transform: scale3d(0, 1, 1);
+		transition: transform 0.1s;
+	}
+	.menu--prospero .menu__item--current .menu__link::before {
+		transform: scale3d(1, 1, 1);
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-duration: 0.3s;
+	}
+	
+	h1 {
+	  font-size: 34px;
+	  color: #39393e;
+	  font-weight: bold;
+	  letter-spacing: 2px;
+	}
+	#contentblock {
+	      display: inline-block;
+	      background-color: rgba(0,0,0,.03);
+	      width: 700px;
+	      height: 450px;
+	      font-weight: 550;
+	      padding: 20px;
+	    }
+	#description{
+	  font-family: 微軟正黑體;
+	  border-radius: 5px;
+	  border-width: 2px;
+	  font-size: 16px;
+	  outline: none;
+	  resize: none;
+	}
+	
+	.imgbtn{
+	  background-color: rgba(92, 99, 106, 0.8);
+	  color: #fff;
+	  font-size: 16px;
+	  border:none;
+	  display: inline-block;
+	  padding: 5px;
+	  cursor: pointer;
+	  letter-spacing: 2px;
+	  transition-duration: 0.5s;
+	}
+	.imgbtn input{
+	  position: absolute;
+	  left: 0;
+	  top: 0;
+	  opacity: 0;
+	}
+	
+	.rate {
+	  height: 46px;
+	  float: left;
+	  margin-left:260px;
+	  justify-content: center;
+	  align-items: center;
+	}
+	.rate:not(:checked) > input {
+	    position:absolute;
+	    top:-9999px;
+	}
+	.rate:not(:checked) > label {
+	    float:right;
+	    width:1em;
+	    overflow:hidden;
+	    white-space:nowrap;
+	    cursor:pointer;
+	    font-size:30px;
+	    color:#ccc;
+	}
+	.rate:not(:checked) > label:before {
+	    content: '★ ';
+	}
+	.rate > input:checked ~ label {
+	    color: #ffe245;    
+	}
+	.rate:not(:checked) > label:hover,
+	.rate:not(:checked) > label:hover ~ label {
+	    color: #fcdf3a;  
+	}
+	.rate > input:checked + label:hover,
+	.rate > input:checked + label:hover ~ label,
+	.rate > input:checked ~ label:hover,
+	.rate > input:checked ~ label:hover ~ label,
+	.rate > label:hover ~ input:checked ~ label {
+	    color: #ffe245;
+	}
+  </style>
+  <!-- Custom styles for this template -->
+  <link href="statics/css/product.css" rel="stylesheet">
+  <link href="statics/css/jquery-confirm.css" rel="stylesheet">
+
+  <script src="statics/js/jquery-3.4.1.min.js"></script>
+  <script src="statics/js/jquery-confirm.js"></script>
+  <script src="statics/js/big.min.js"></script>
+
+</head>
+
+<body>
+	  <section class="section section--menu" id="Prospero">
+	  <nav class="menu menu--prospero">
+	
+	    <ul class="menu__list">
+	      <li class="menu__item">
+	        <a class="menu__link" href="home.html" style="text-decoration:none;">首頁</a>
+	      </li>
+	      <li class="menu__item">
+	        <a class="menu__link" href="service.html" style="text-decoration:none;">選擇服務</a>
+	      </li>
+	      <li class="menu__item menu__item--current">
+	        <a class="menu__link" href="reserve.html" style="text-decoration:none;">檢視預約</a>
+	      </li>
+	      <li class="menu__item">
+	        <a class="menu__link" href="rating.html" style="text-decoration:none;">檢視評價</a>
+	      </li>
+	      <li class="menu__item">
+	        <a class="menu__link" href="favorite.html" style="text-decoration:none;">我的最愛</a>
+	      </li>
+	      <li class="menu__item">
+	        <a class="menu__link" href="index.html" style="text-decoration:none;">登出</a>
+	      </li>
+	    </ul>
+	    
+	  </nav>
+	</section>
+	
+	<center>
+		<br><h1>新增評價</h1><br>
+	
+	<div id="contentblock">
+	  <div id="title"></div>
+	
+	  <div class="rate">
+	    <input type="radio" id="star5" name="rate" value="5" />
+	    <label for="star5">5 stars</label>
+	    <input type="radio" id="star4" name="rate" value="4" />
+	    <label for="star4">4 stars</label>
+	    <input type="radio" id="star3" name="rate" value="3" />
+	    <label for="star3">3 stars</label>
+	    <input type="radio" id="star2" name="rate" value="2" />
+	    <label for="star2">2 stars</label>
+	    <input type="radio" id="star1" name="rate" value="1" />
+	    <label for="star1">1 star</label>
+	  </div>
+	  <br><br><br>
+	  <textarea id="description" placeholder="說點什麼吧..." cols="50" rows="10"></textarea>
+	  <br><br>
+
+	  <botton style="outline:none;padding:10px 20px;letter-spacing:1px;font-weight:600;background-color:#f16c5d;border:none;border-radius:4px;color:white;cursor:pointer;" id="cancelbtn">取消</botton>&nbsp&nbsp&nbsp&nbsp
+                <button id="donebtn" style="outline:none;padding:10px 20px;letter-spacing:1px;font-weight:600;background-color:#f16c5d;border:none;border-radius:4px;color:white;cursor:pointer;">完成</button>
+	</div>
+	</center>
+  <script>
+  
+  $( document ).ready(function() {
+	  var pid = getUrlParameter('pid');
+	  var pname = getUrlParameter('pname');
+	  var rid = getUrlParameter('rid');
+	  //alert(pid);
+	  
+	  function getUrlParameter(sParam) {
+		    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+		        sURLVariables = sPageURL.split('&'),
+		        sParameterName,
+		        i;
+
+		    for (i = 0; i < sURLVariables.length; i++) {
+		        sParameterName = sURLVariables[i].split('=');
+
+		        if (sParameterName[0] === sParam) {
+		            return sParameterName[1] === undefined ? true : sParameterName[1];
+		        }
+		    }
+		};
+	  
+	  $(".menu__item").click('.menu__link',function(e){
+	    $(".menu__item").removeClass("menu__item--current");
+	    $(this).addClass("menu__item--current");
+	  })
+	  
+	  $("#donebtn").click(function () {
+	  	
+		var obj=document.getElementsByName("rate");
+		var selected=[];
+		
+		for (var i=0; i<obj.length; i++) {
+			if (obj[i].checked) {
+				selected.push(obj[i].value);
+			}
+		}
+		
+		
+        var description = $('#description').val();
+
+            // 將資料組成JSON格式
+            var data_object = {
+                "star": selected[0],
+                "description": description,
+                "service_id": pid,
+                "service_name": pname,
+                "reserve_id": rid
+            };
+
+            // 將JSON格式轉換成字串
+            var data_string = JSON.stringify(data_object);
+
+            // 發出POST的AJAX請求
+            $.ajax({
+                    type: "POST",
+                    url: "api/rating.do",
+                    data: data_string,
+                    crossDomain: true,
+                    cache: false,
+                    dataType: 'json',
+                    timeout: 5000,
+                    success: function (response) {
+
+                        if(response.status == 200){
+
+                            $.confirm({
+								theme: 'modern',
+								icon: 'fa fa-check-circle-o',
+								type: 'green',
+								animation: 'scale',
+								title: '系統提醒',
+								content: "已完成新增評價！",
+								buttons: {
+									確定: {
+										text: '確定',
+										btnClass: 'btn-blue',
+										action: function () {
+											document.location.href = "reserve.html";
+										}
+									}
+								}
+							});
+                        }
+                    },
+                    error: function () {
+                        alert("無法連線到伺服器！");
+                    }
+	         });
+	  });
+	  
+	  $("#cancelbtn").click(function () {
+		  document.location.href = "reserve.html";
+	  });
+	});
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,247 @@
+<!-- 尚未完成！！！！！ -->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>新增服務 ｜ 美容服務整合平台</title>
+    <link href="statics/icon/favicon.ico" type="image/x-icon" rel="icon">
+    <link href="statics/icon/favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <link rel="stylesheet" type="text/css" href="statics/css/cake.generic.css">
+	<link href="statics/css/bootstrap.min.css" rel="stylesheet">
+	<link href="statics/css/font-awesome.min.css" rel="stylesheet">
+	<link href="statics/icon/favicon.ico" type="image/x-icon" rel="icon">
+	<link href="statics/icon/favicon.ico" type="image/x-icon" rel="shortcut icon">
+
+	<style>
+	html,body{
+  		font-family: 微軟正黑體;
+  	}
+  	.menu {
+	  font-size: 16px;
+	  line-height: 1;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	}
+	
+	.menu__list {
+	  font-size: 16px;
+	  position: relative;
+	  display: -webkit-flex;
+	  display: flex;
+	  -webkit-flex-wrap: wrap;
+	  flex-wrap: wrap;
+	  margin: 0;
+	  padding: 0;
+	  list-style: none;
+	}
+	
+	.menu__item {
+	  font-size: 16px;
+	  display: block;
+	  margin: 1em 0;
+	}
+	
+	.menu__login {
+	  font-size: 16px;
+	  display: block;
+	  margin: 1em 0;
+	  text-align:right;
+	}
+	
+	.menu__link {
+	  font-size: 1.05em;
+	  font-weight: bold;
+	  display: block;
+	  padding: 1em;
+	  cursor: pointer;
+	  -webkit-user-select: none;
+	  -moz-user-select: none;
+	  -ms-user-select: none;
+	  user-select: none;
+	  -webkit-touch-callout: none;
+	  -khtml-user-select: none;
+	  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	}
+	.menu__link:hover,
+	.menu__link:focus {
+		outline: none;
+	}
+	.menu--prospero .menu__link {
+		position: relative;
+		display: block;
+		margin: 0 1.5em;
+		padding: 0.75em 0;
+		text-align: center;
+		color: #b5b5b5;
+		transition: color 0.3s;
+	}
+	.menu--prospero .menu__link:hover,
+	.menu--prospero .menu__link:focus {
+		color: #929292;
+	}
+	
+	.menu--prospero .menu__item--current .menu__link {
+		color: #d94f5c;
+	}
+	.menu--prospero .menu__link::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 4px;
+		background: #d94f5c;
+		transform: scale3d(0, 1, 1);
+		transition: transform 0.1s;
+	}
+	.menu--prospero .menu__item--current .menu__link::before {
+		transform: scale3d(1, 1, 1);
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-duration: 0.3s;
+	}
+	h1 {
+	  font-size: 34px;
+	  color: #39393e;
+	  font-weight: bold;
+	  letter-spacing: 2px;
+	}
+	.btn {
+	  font-size: 16px;
+	  border: solid 1px;
+	  border-color: dimgray;
+	  border-radius: 8px;
+	  display: inline-block;
+	  padding: 5px;
+	  cursor: pointer;
+	  letter-spacing: 2px;
+	  transition-duration: 0.5s;
+	}
+	.btn:hover {
+	  background-color: #f16c5d;
+	  border-color:#f16c5d;
+	  color: #fff;
+	}
+	</style>
+	
+	<!-- Custom styles for this template -->
+	<link href="statics/css/product.css" rel="stylesheet">
+	<link href="statics/css/jquery-confirm.css" rel="stylesheet">
+	
+    <script src="statics/js/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<section class="section section--menu" id="Prospero">
+	  <nav class="menu menu--prospero">
+	    <ul class="menu__list">
+	      <li class="menu__item">
+	        <a class="menu__link" href="designer_service.html" style="text-decoration:none;">檢視服務</a>
+	      </li>
+	      <li class="menu__item menu__item--current">
+	        <a class="menu__link" href="addservice.html" style="text-decoration:none;">新增服務</a>
+	      </li>
+	      <li class="menu__item">
+	        <a class="menu__link" href="confirmreserve.html" style="text-decoration:none;">完成預約</a>
+	      </li>
+	      <li class="menu__item">
+	        <a class="menu__link" href="index.html" style="text-decoration:none;">登出</a>
+	      </li>
+	    </ul>
+	    
+	  </nav>
+	</section> 
+	
+	<div id="container">
+        <center>
+            <br><h1>新增服務</h1><br>
+        <form id="form" accept-charset="utf-8">            
+                <div style="display:none;"><input type="hidden" name="_method" value="POST"></div>
+                <div class="input text required">
+                    <label for="service_name">服務名稱</label>&nbsp&nbsp
+                    <input name="name" maxlength="30" style="width:500px" type="text" id="service_name" required="required">
+                </div>
+                <div class="input price required">
+                    <label for="price">價格</label>&nbsp&nbsp
+                    <input name="price" maxlength="15" style="width:500px" type="text" id="service_price" required="required">
+                </div>
+				<div class="input image required">
+                    <label for="image">上傳圖片</label>&nbsp&nbsp
+                    <input name="image" maxlength="15" style="width:500px" type="text" id="service_image" required="required">
+                </div>
+                <div class="input describe required">
+                    <label for="service_describe">詳細內容</label>&nbsp&nbsp
+                    <input name="describe" maxlength="15" style="width:500px" type="text" id="service_describe" required="required">
+                </div>
+                <div class="input address required">
+                    <label for="service_address">地址</label>&nbsp&nbsp
+                    <input name="address" maxlength="15" style="width:500px" type="text" id="service_address" required="required">
+                </div>
+                <button" style="outline:none;padding:10px 20px;letter-spacing:1px;font-weight:600;background-color:#f16c5d;border:none;border-radius:4px;color:white;cursor:pointer;" id="submit">新增</button>
+            </form>
+            </center>
+            
+            <script type="text/javascript">
+                $(document).ready(function() {
+                	
+                	$(".menu__item").click('.menu__link',function(e){
+                	    $(".menu__item").removeClass("menu__item--current");
+                	    $(this).addClass("menu__item--current");
+                	  })
+                	  
+                    // 處理表單點擊事件
+                    var $form = $('#submit');
+                    $form.click(function() {
+                        submit();
+                    });
+
+                    function submit() {
+                        var name = $('#service_name').val();
+                        var price = $('#service_price').val();
+                        var image = $('#service_image').val();
+                        var describe = $('#service_describe').val();
+                        var address = $('#service_address').val();
+
+                            // 將資料組成JSON格式
+                            var data_object = {
+                                "name": name,
+                                "price": price,
+                                "image": image,
+                                "describe": describe,
+                                "address": address
+                            };
+
+                            // 將JSON格式轉換成字串
+                            var data_string = JSON.stringify(data_object);
+
+                            // 發出POST的AJAX請求
+                            $.ajax({
+                                    type: "POST",
+                                    url: "api/service.do",
+                                    data: data_string,
+                                    crossDomain: true,
+                                    cache: false,
+                                    dataType: 'json',
+                                    timeout: 5000,
+                                    success: function (response) {
+                                        $('#flashMessage').html(response.message);
+                                        $('#flashMessage').show();
+                                        if(response.status == 200){
+                                            alert('新增成功！');
+                                            document.location.href = "addservice.html";
+                                        }
+                                    },
+                                    error: function () {
+                                        alert("無法連線到伺服器！");
+                                    }
+                            });
+                        }
+                });
+            </script>
+	</div>
+</body>
+
+</html>

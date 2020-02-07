@@ -1,0 +1,288 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Jekyll v3.8.5">
+
+  <title>選擇服務 ｜ 美容服務整合平台</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="statics/css/bootstrap.min.css" rel="stylesheet">
+  <link href="statics/icon/favicon.ico" type="image/x-icon" rel="icon">
+  <link href="statics/icon/favicon.ico" type="image/x-icon" rel="shortcut icon">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<style> 
+	html,body{
+	  		font-family: 微軟正黑體;
+	  	}
+	  	
+	.menu {
+		
+	  font-size: 16px;
+	  line-height: 1;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	}
+	
+	.menu__list {
+	  font-size: 16px;
+	  position: relative;
+	  display: -webkit-flex;
+	  display: flex;
+	  -webkit-flex-wrap: wrap;
+	  flex-wrap: wrap;
+	  margin: 0;
+	  padding: 0;
+	  list-style: none;
+	}
+	
+	.menu__item {
+	  font-size: 16px;
+	  display: block;
+	  margin: 1em 0;
+	}
+	
+	.menu__login {
+	  font-size: 16px;
+	  display: block;
+	  margin: 1em 0;
+	  text-align:right;
+	}
+	
+	.menu__link {
+	  font-size: 1.05em;
+	  font-weight: bold;
+	  display: block;
+	  padding: 1em;
+	  cursor: pointer;
+	  -webkit-user-select: none;
+	  -moz-user-select: none;
+	  -ms-user-select: none;
+	  user-select: none;
+	  -webkit-touch-callout: none;
+	  -khtml-user-select: none;
+	  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	}
+	.menu__link:hover,
+	.menu__link:focus {
+		outline: none;
+	}
+	.menu--prospero .menu__link {
+		position: relative;
+		display: block;
+		margin: 0 1.5em;
+		padding: 0.75em 0;
+		text-align: center;
+		color: #b5b5b5;
+		transition: color 0.3s;
+	}
+	.menu--prospero .menu__link:hover,
+	.menu--prospero .menu__link:focus {
+		color: #929292;
+	}
+	
+	.menu--prospero .menu__item--current .menu__link {
+		color: #d94f5c;
+	}
+	.menu--prospero .menu__link::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 4px;
+		background: #d94f5c;
+		transform: scale3d(0, 1, 1);
+		transition: transform 0.1s;
+	}
+	.menu--prospero .menu__item--current .menu__link::before {
+		transform: scale3d(1, 1, 1);
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-duration: 0.3s;
+	}
+  	
+	input[type=text] {
+	  width: 130px;
+	  box-sizing: border-box;
+	  border: 2px solid #ccc;
+	  border-radius: 4px;
+	  font-size: 16px;
+	  background-color: white;
+	  background-image: url('searchicon.png');
+	  background-position: 10px 10px; 
+	  background-repeat: no-repeat;
+	  padding: 12px 20px 12px 40px;
+	  -webkit-transition: width 0.4s ease-in-out;
+	  transition: width 0.4s ease-in-out;
+	}
+	
+	input[type=text]:focus {
+	  width: 100%;
+	}
+	
+	h1 {
+	  font-size: 34px;
+	  color: #39393e;
+	  font-weight: bold;
+	  letter-spacing: 2px;
+	}
+	
+	h2 {
+	  font-size: 20px;
+	  color: #929295;
+	  font-weight: 600;
+	  letter-spacing: 1px;
+	}
+</style>
+  <!-- Custom styles for this template -->
+  <link href="statics/css/product.css" rel="stylesheet">
+
+  <script src="statics/js/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+
+<section class="section section--menu" id="Prospero">
+	  <nav class="menu menu--prospero">
+	    <ul class="menu__list">
+	      <li class="menu__item menu__item--current">
+	        <a class="menu__link" href="designer_service.html" style="text-decoration:none;">檢視服務</a>
+	      </li>
+	      <li class="menu__item">
+	        <a class="menu__link" href="confirmreserve.html" style="text-decoration:none;">完成預約</a>
+	      </li>
+	      <li class="menu__item">
+	        <a class="menu__link" href="index.html" style="text-decoration:none;">登出</a>
+	      </li>
+	    </ul>
+	    
+	  </nav>
+	</section>  
+	
+	<center>
+    <br><h1>服務列表</h1><br>
+    <h2>我們服務內容包含美容、美髮、美甲</h2><br>
+	</center>
+
+
+    <div class="container">
+      <div id="service_panel" class="row">
+      </div>
+    </div>
+
+
+  <script>  
+  $(document).ready(function() {
+	//菜單
+  	$(".menu__item").click('.menu__link',function(e){
+  	    $(".menu__item").removeClass("menu__item--current");
+  	    $(this).addClass("menu__item--current");
+  	  })
+  	  
+  });
+
+    
+  //取得所有service
+    function getAllService() {
+      $.ajax({
+        type: "GET",
+        url: "api/service.do",
+        crossDomain: true,
+        cache: false,
+        dataType: 'json',
+        timeout: 5000,
+        success: function (response) {
+          if (response.status == 200) {
+        	var service_panel = '';
+        	
+        	$.each(response.response.data, function (){
+        		service_panel += addService(this);
+        	})
+        	
+        	$("#service_panel").append(service_panel);
+        	setButtonFunctionc(); 
+        	setButtonFunctionf();
+        	checkIfExistInAdres();
+          }
+        },
+        error: function () {
+          alert("無法連線到伺服器！");
+        }
+      });
+    }
+
+    getAllService();
+    
+  //添加service到table
+    function addService(data) {
+    	let inner_html = '';
+    	inner_html += '<div class="col-md-4">';
+   		inner_html += '<div class="card-header" style="color: #39393e">';
+   		inner_html += '<h4 style="color: #39393e; font-size:20px; font-weight:600; text-align:center;">' + data.name + '</h4>';
+ 		inner_html += '</div>';
+ 		inner_html += '<div class="card mb-4 shadow-sm">';
+ 		if(data.image != ""){
+ 			inner_html += '<img src="statics/img/service/' + data.image + '" width="100%">';
+ 		}
+ 		inner_html += '<div class="card-body">';
+		inner_html += '<h1 class="card-title pricing-card-title">$' + data.price + ' <small class="text-muted">/ NT</small></h1>';
+		inner_html += '<p style="font-size: 20px;color: #39393e;">' + data.describe + '</p>';
+		inner_html += '<div class="d-flex justify-content-between align-items-center">';
+		inner_html += '<div class="btn-group">';
+		inner_html += '<a href="javascript: deleteService(' + data.id + ');" class="btn btn-primary stretched-link" style="width:130px; outline:none;letter-spacing:1px;font-weight:600;background-color:#f16c5d;border:none;border-radius:4px;">刪除服務</a>';
+		inner_html += '&nbsp&nbsp&nbsp&nbsp<a href="editservice.html?sid=' + data.id + '" class="btn btn-primary stretched-link" style="width:130px;outline:none;letter-spacing:1px;font-weight:600;background-color:#f16c5d;border:none;border-radius:4px;">修改服務</a>';
+		inner_html += '</div></div></div></div></div>';
+    	
+		return inner_html;
+    }
+  
+    function deleteService(id) {
+        var check = window.confirm("確認刪除服務？");
+        if (check == true) {
+            console.log("You pressed OK!");
+            var request = {'id': id};
+            var data_string = JSON.stringify(request);
+            $.ajax({
+                type: "DELETE",
+                url: "api/service.do",
+                crossDomain: true,
+                data: data_string,
+                cache: false,
+                dataType: 'json',
+                timeout: 5000,
+                success: function (response) {
+                    if(response.status == 200){
+                        $("#service_panel").empty();
+                        getAllService();
+                    }
+                    console.log(response);
+                },
+                error: function () {
+                    alert("無法連線到伺服器！");
+                }
+            });
+        }
+        else {
+            console.log("You pressed Cancel!");
+        }
+    }
+    
+    </script>
+
+
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Back to top</a>
+      </p>
+    </div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>登入會員 ｜ 美容服務整合平台</title>
+    <link href="statics/icon/favicon.ico" type="image/x-icon" rel="icon">
+    <link href="statics/icon/favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <link rel="stylesheet" type="text/css" href="statics/css/cake.generic.css">
+	<link href="statics/css/bootstrap.min.css" rel="stylesheet">
+	<link href="statics/css/font-awesome.min.css" rel="stylesheet">
+	<link href="statics/icon/favicon.ico" type="image/x-icon" rel="icon">
+	<link href="statics/icon/favicon.ico" type="image/x-icon" rel="shortcut icon">
+	
+	<style>
+		html,
+		body {
+			font-family: 微軟正黑體;
+		}
+		
+		.menu {
+	  font-size: 16px;
+	  line-height: 1;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	}
+	
+	.menu__list {
+	  font-size: 16px;
+	  position: relative;
+	  display: -webkit-flex;
+	  display: flex;
+	  -webkit-flex-wrap: wrap;
+	  flex-wrap: wrap;
+	  margin: 0;
+	  padding: 0;
+	  list-style: none;
+	}
+	
+	.menu__item {
+	  font-size: 16px;
+	  display: block;
+	  margin: 1em 0;
+	}
+	
+	.menu__login {
+	  font-size: 16px;
+	  display: block;
+	  margin: 1em 0;
+	  text-align:right;
+	}
+	
+	.menu__link {
+	  font-size: 1.05em;
+	  font-weight: bold;
+	  display: block;
+	  padding: 1em;
+	  cursor: pointer;
+	  -webkit-user-select: none;
+	  -moz-user-select: none;
+	  -ms-user-select: none;
+	  user-select: none;
+	  -webkit-touch-callout: none;
+	  -khtml-user-select: none;
+	  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	}
+	.menu__link:hover,
+	.menu__link:focus {
+		outline: none;
+	}
+	.menu--prospero .menu__link {
+		position: relative;
+		display: block;
+		margin: 0 1.5em;
+		padding: 0.75em 0;
+		text-align: center;
+		color: #b5b5b5;
+		transition: color 0.3s;
+	}
+	.menu--prospero .menu__link:hover,
+	.menu--prospero .menu__link:focus {
+		color: #929292;
+	}
+	
+	.menu--prospero .menu__item--current .menu__link {
+		color: #d94f5c;
+	}
+	.menu--prospero .menu__link::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 4px;
+		background: #d94f5c;
+		transform: scale3d(0, 1, 1);
+		transition: transform 0.1s;
+	}
+	.menu--prospero .menu__item--current .menu__link::before {
+		transform: scale3d(1, 1, 1);
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-duration: 0.3s;
+	}
+	h1 {
+	  font-size: 34px;
+	  color: #39393e;
+	  font-weight: bold;
+	  letter-spacing: 2px;
+	}
+
+	</style>
+	
+	<!-- Custom styles for this template -->
+	<link href="statics/css/product.css" rel="stylesheet">
+	<link href="statics/css/jquery-confirm.css" rel="stylesheet">
+
+    <script src="statics/js/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="container">
+        
+        <section class="section section--menu" id="Prospero">
+	  <nav class="menu menu--prospero">
+	
+	    <ul class="menu__list">
+	      <li class="menu__item">
+	        <a class="menu__link" href="index.html" style="text-decoration:none;">首頁</a>
+	      </li>
+	      <li class="menu__item">
+	        <a class="menu__link" href="visitors_service.html" style="text-decoration:none;">服務列表</a>
+	      </li>
+	      <li class="menu__item menu__item--current">
+	        <a class="menu__link" href="login.html" style="text-decoration:none;">登入</a>
+	      </li>
+	    </ul>
+	    
+	  </nav>
+	</section>    
+			<center>
+			<form id="form" accept-charset="utf-8">  
+			<br><h1>登入會員</h1><br>
+                <div style="display:none;"><input type="hidden" name="_method" value="POST"></div>
+                <div class="input email required">
+                    <label for="member_email">電郵</label>&nbsp&nbsp
+                    <input name="email" maxlength="50" style="width:500px" type="email" id="member_email" required="required">
+                </div>
+                <br>
+                <div class="input password required">
+                    <label for="member_password">密碼</label>&nbsp&nbsp
+                    <input name="password" maxlength="30" style="width:500px" type="password" id="member_password" required="required">
+                </div></form>
+                <br>
+                <center><botton style="outline:none;padding:10px 20px;letter-spacing:1px;font-weight:600;background-color:#f16c5d;border:none;border-radius:4px;color:white;cursor:pointer;" id="login">登入</botton>&nbsp&nbsp&nbsp&nbsp
+                <button id="register" style="outline:none;padding:10px 20px;letter-spacing:1px;font-weight:600;background-color:#f16c5d;border:none;border-radius:4px;color:white;cursor:pointer;">註冊</button></center>  
+			
+			</center>
+
+    </div>
+
+	<script type="text/javascript">
+                $(document).ready(function() {
+                	
+                	$(".menu__item").click('.menu__link',function(e){
+                	    $(".menu__item").removeClass("menu__item--current");
+                	    $(this).addClass("menu__item--current");
+                	  })
+                	
+                	  $("#register").click(function () {
+                		  document.location.href = "register.html";
+                	  });
+                    $("#login").click(function () {
+
+                        var email = $('#member_email').val();
+                        var password = $('#member_password').val();
+
+                        var email_rule = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
+                        var password_rule = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+                        if (!email_rule.test(email)) {
+                            alert("Email格式不符！");
+                        }
+                        else if(!password_rule.test(password)) {
+                            alert("密碼格式不符，長度至少8，且至少包含一個數字和英文字母！");
+                        }
+                        else {
+
+                                $.ajax({
+                                        type: "GET",
+                                        url: "api/member.do",
+                                        crossDomain: true,
+                                        cache: false,
+                                        dataType: 'json',
+                                        timeout: 5000,
+                                        success: function (response) {
+                                            if(response.status == 200){
+                                                checkExist(response.response.data);
+                                            }
+                                            console.log(response);
+                                        },
+                                        error: function () {
+                                            alert("無法連線到伺服器！");
+                                        }
+                                });
+                        }
+                    });
+
+                    function checkExist(data) {
+                    	var echeck = 'no';
+                    	var pcheck = 'no';
+                    	var mcheck = 'no';
+                    	var memcheck = 'no';
+                    	var dcheck = 'no';
+                    	
+                    	var email = $('#member_email').val();
+                        var password = $('#member_password').val();
+                        
+                        $.each(data, function(index, value) {
+				
+                        	if(email == value['email']){
+                        		echeck = 'yes';
+                        		if(password == value['password']){
+                            		pcheck = 'yes';
+                       				if(value['identity'] == 0){
+                       					mcheck = 'yes';
+                       				}else if(value['identity'] == 2){
+                       					dcheck = 'yes';
+                       				}else{
+                       					memcheck = 'yes';
+                       				}
+                            	}
+                        	}
+                       })
+                       
+                       if(mcheck == 'yes'){
+                    	   alert('管理員登入成功！');
+                    	   document.location.href = "member.html";
+                       }else if(echeck == 'no'){
+                    	   alert('無此帳號，請先註冊！');
+                       }else if(echeck == 'yes' && pcheck == 'no'){
+                    	   alert('密碼錯誤！');
+                       }else if(dcheck == 'yes'){
+                    	   alert('設計師登入成功！');
+                    	   document.location.href = "designer_service.html";
+                       }else if(echeck == 'yes' && pcheck == 'yes'){
+                    	   alert('會員登入成功！');
+                    	   document.location.href = "service.html";
+                       }else{
+                    	   alert('錯誤訊息！');
+                       }
+
+                    }
+                });
+            </script>
+</body>
+
+</html>
